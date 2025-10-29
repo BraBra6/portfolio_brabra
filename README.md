@@ -1,4 +1,4 @@
-#  Brahim Thiam – Portfolio
+#  Brahim Thiam Portfolio
 
 This repository contains the **first version** of my personal portfolio built using **HTML and CSS**.
 
@@ -8,7 +8,7 @@ This site serves as a simple introduction to:
 - My technical skills
 - My academic background
 
-## 🛠 Technologies Used
+##  Technologies Used
 - **HTML5**
 - **CSS3** (with Dark & Light Mode support)
 - **Custom Fonts**
