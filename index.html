@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brahim Thiam Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+
+  <nav>
+    <div class="left">
+      <a href="#about-section">Brahim</a>
+    </div>
+    <div class="right">
+      <a href="#about-section">About</a>
+      <a href="#skills-section">Skills</a>
+      <a href="#education-section">Education</a>
+      <a href="#contact-section">Contact</a>
+      <button id="themeToggle">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ABOUT -->
+  <section id="about-section">
+    <h2>Hey World, I’m Brahim!</h2>
+    <div class="headshot">
+      <!-- <img src="images/me.jpg" alt="Brahim Picture"> -->
+      <span>Your Photo Here</span>
+    </div>
+    <div class="bio">
+      <p>
+        I am a Computer Science student specializing in Data Science, Machine Learning, and Artificial Intelligence.
+        Passionate about building intelligent systems and continuously improving my skills.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills-section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <i class="fa-brands fa-python"></i>
+      <i class="devicon-java-plain"></i>
+      <i class="fa-solid fa-database"></i>
+      <i class="fa-brands fa-git-alt"></i>
+      <i class="fa-brands fa-github"></i>
+      <i class="devicon-c-plain"></i>
+      <i class="fa-brands fa-figma"></i>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education-section">
+    <h2>Education</h2>
+    <h3>B.Sc. in Computer Science</h3>
+    <p>Université du Québec en Outaouais, Gatineau, QC</p>
+    <ul>
+      <li>Specialization: Data Science, Machine Learning, Artificial Intelligence</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact-section">
+    <h2>Contact</h2>
+    <p><a href="mailto:thib22@uqo.ca">📧 thib22@uqo.ca</a></p>
+    <p><a href="https://github.com/BraBra6" target="_blank">💻 GitHub: github.com/BraBra6</a></p>
+    <p><a href="https://www.linkedin.com/in/brahim-landing-thiam-09a1512ba/" target="_blank">🔗 LinkedIn</a></p>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Brahim Thiam | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('theme-light');
+      toggle.textContent = document.documentElement.classList.contains('theme-light') ? '🌞' : '🌙';
+    });
+  </script>
+
+</body>
+</html>

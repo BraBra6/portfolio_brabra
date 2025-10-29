@@ -1,0 +1,205 @@
+/* ===== PALETTE: Dark Mode (par défaut) ===== */
+:root {
+  --bg: #0b0d10;         /* charcoal */
+  --paper: #14171b;      /* deep section background */
+  --ink: #f3efe6;        /* warm off-white */
+  --muted: #c9c4b6;      /* muted sand */
+  --accent: #e0b54e;     /* saffron gold */
+  --border: #23262a;     /* subtle border */
+  --chip: #1b2433;       /* chip background */
+}
+
+/* ===== PALETTE: Light Mode (activée via .theme-light sur <html>) ===== */
+.theme-light {
+  --bg: #faf6eb;        /* warm cream */
+  --paper: #fffdf7;     /* paper white */
+  --ink: #1b1d1f;       /* charcoal */
+  --muted: #666;        /* softer text */
+  --accent: #c79823;    /* deeper saffron */
+  --border: #e7e1cf;    /* parchment border */
+  --chip: #f0ead6;      /* light chip bg */
+}
+
+/* Respect préférence système (facultatif) */
+@media (prefers-color-scheme: light) {
+  :root:not(.force-dark) {
+    --bg: #faf6eb;
+    --paper: #fffdf7;
+    --ink: #1b1d1f;
+    --muted: #666;
+    --accent: #c79823;
+    --border: #e7e1cf;
+    --chip: #f0ead6;
+  }
+}
+
+/* ===== RESET & BASE STYLES ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+@font-face {
+  font-family: 'Brahim';
+  src: url('fonts/font.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Brahim';
+  src: url('fonts/bold_font.ttf') format('truetype');
+  font-weight: 700;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Brahim', sans-serif;
+  line-height: 1.6;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+nav .left a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+nav .right a {
+  color: var(--ink);
+  margin: 0 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: color .3s, opacity .3s;
+}
+nav .right a:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+#themeToggle {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .5rem .75rem;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color .3s, color .3s;
+}
+#themeToggle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ===== SECTION STYLES ===== */
+section {
+  padding: 8rem 2rem;
+  min-height: 80vh;
+  background: var(--paper);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+section h2::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ===== HERO SECTION ===== */
+#about-section {
+  background: var(--bg);
+  padding-top: 8rem;
+}
+#about-section h2 { color: var(--accent); }
+.headshot {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 3px solid var(--accent);
+  margin: 1rem 0 2rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+.headshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.bio {
+  max-width: 700px;
+  font-size: 1.2rem;
+}
+
+/* ===== SKILLS SECTION ===== */
+#skills-section h2 { color: var(--accent); }
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.skills-container i {
+  font-size: 3rem;
+  background: var(--chip);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  transition: transform .3s, color .3s, border-color .3s;
+}
+.skills-container i:hover {
+  transform: translateY(-5px);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ===== EDUCATION ===== */
+#education-section ul {
+  list-style: none;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+}
+#education-section li { margin-bottom: .5rem; }
+
+/* ===== CONTACT ===== */
+#contact-section a {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+#contact-section a:hover { color: var(--ink); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--bg);
+  color: var(--muted);
+  text-align: center;
+  padding: 2rem 0;
+  font-size: .875rem;
+}
