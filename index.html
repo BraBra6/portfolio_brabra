@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brahim Thiam Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brahim Thiam | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 <body>
 
+  <!-- NAVBAR -->
   <nav>
     <div class="left">
       <a href="#about-section">Brahim</a>
@@ -17,38 +22,90 @@
     <div class="right">
       <a href="#about-section">About</a>
       <a href="#skills-section">Skills</a>
+      <a href="#projects-section">Projects</a>
       <a href="#education-section">Education</a>
       <a href="#contact-section">Contact</a>
-      <button id="themeToggle">🌙</button>
+      <a href="cv_brahim.pdf" download title="Download my CV">📄 CV</a>
+      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
     </div>
   </nav>
 
   <!-- ABOUT -->
   <section id="about-section">
     <h2>Hey World, I’m Brahim!</h2>
+
     <div class="headshot">
-      <!-- <img src="images/me.jpg" alt="Brahim Picture"> -->
-      <span>Your Photo Here</span>
+      <!-- Remplace l'image ci-dessous par ta photo -->
+      <img src="images/profile.jpg" alt="Brahim Thiam" />
     </div>
-    <div class="bio">
-      <p>
-        I am a Computer Science student specializing in Data Science, Machine Learning, and Artificial Intelligence.
-        Passionate about building intelligent systems and continuously improving my skills.
-      </p>
-    </div>
+
+<div class="bio">
+  <p>
+    Hey! I’m Brahim, a Computer Science student with a growing passion for data science,
+    machine learning, and building useful software. I love learning by creating, whether
+    it’s a small tool, a clean interface, or a data-driven project.
+  </p>
+  <p>
+    Outside of tech, I enjoy reading, playing soccer, watching anime, lifting weights and
+    always finding new ways to grow and stay active.
+  </p>
+</div>
+
+
   </section>
 
   <!-- SKILLS -->
   <section id="skills-section">
     <h2>Skills</h2>
     <div class="skills-container">
-      <i class="fa-brands fa-python"></i>
-      <i class="devicon-java-plain"></i>
-      <i class="fa-solid fa-database"></i>
-      <i class="fa-brands fa-git-alt"></i>
-      <i class="fa-brands fa-github"></i>
-      <i class="devicon-c-plain"></i>
-      <i class="fa-brands fa-figma"></i>
+      <i class="fa-brands fa-python" title="Python"></i>
+      <i class="devicon-java-plain" title="Java"></i>
+      <i class="fa-solid fa-database" title="SQL / Databases"></i>
+      <i class="fa-brands fa-git-alt" title="Git"></i>
+      <i class="fa-brands fa-github" title="GitHub"></i>
+      <i class="devicon-c-plain" title="C"></i>
+      <i class="fa-brands fa-figma" title="Figma"></i>
+    </div>
+  </section>
+
+  <!-- PROJECTS (from your CV, excluding the portfolio project) -->
+  <section id="projects-section">
+    <h2>Projects</h2>
+
+    <div class="projects-container" style="display:grid;gap:18px;grid-template-columns:1fr;max-width:980px;width:100%;">
+      <!-- Wine Data Analysis & Classification -->
+      <article class="project-card" style="background:var(--paper);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:left;">
+        <h3>Wine Data Analysis &amp; Classification</h3>
+        <p><em>Python · Scikit-learn · Matplotlib</em></p>
+        <ul>
+          <li>EDA with PCA and correlation matrices; handled missing values with imputation.</li>
+          <li>Built KNN & Logistic Regression models (up to ~95% accuracy) with cross-validation.</li>
+          <li>Compared PCA vs. LDA and documented impact on accuracy.</li>
+        </ul>
+      </article>
+
+      <!-- AI Anime Recommendation System -->
+      <article class="project-card" style="background:var(--paper);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:left;">
+        <h3>AI Anime Recommendation System</h3>
+        <p><em>Python · Pandas · Scikit-learn · Hugging Face</em></p>
+        <ul>
+          <li>Built a Netflix-style recommender using collaborative filtering + NLP embeddings.</li>
+          <li>Processed MyAnimeList data (10k+ rows); cosine similarity for matching.</li>
+          <li>Simple web UI with Gradio.</li>
+        </ul>
+        <p><a class="project-link" href="https://github.com/BraBra6/aianime" target="_blank">View Code →</a></p>
+      </article>
+
+      <!-- PC Order Management App -->
+      <article class="project-card" style="background:var(--paper);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:left;">
+        <h3>PC Order Management App</h3>
+        <p><em>Android · Java · Firebase</em></p>
+        <ul>
+          <li>Realtime CRUD, role-based access with Firebase Auth.</li>
+          <li>Optimized listeners/queries; responsive XML UI for multiple screens.</li>
+          <li>Push notifications for order updates.</li>
+        </ul>
+      </article>
     </div>
   </section>
 
@@ -70,13 +127,14 @@
     <p><a href="https://www.linkedin.com/in/brahim-landing-thiam-09a1512ba/" target="_blank">🔗 LinkedIn</a></p>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© <span id="year"></span> Brahim Thiam | All Rights Reserved</p>
   </footer>
 
+  <!-- SCRIPTS -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     const toggle = document.getElementById('themeToggle');
     toggle.addEventListener('click', () => {
       document.documentElement.classList.toggle('theme-light');
