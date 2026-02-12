@@ -1,162 +1,463 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brahim Thiam | Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brahim Thiam | Portfolio</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
 
-  
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-</head>
-<body>
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+  </head>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="left">
-      <a href="#about-section">Brahim</a>
-    </div>
-    <div class="right">
-      <a href="#about-section">About</a>
-      <a href="#skills-section">Skills</a>
-      <a href="#projects-section">Projects</a>
-      <a href="#education-section">Education</a>
-      <a href="#contact-section">Contact</a>
-      <a class="cv-link" href="cv_brahim.pdf" download title="Download my CV">
-        <i class="fa-solid fa-file-lines"></i> CV
-      </a>
-      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="left">
+        <a href="#about-section">Brahim</a>
+      </div>
 
-    </div>
-  </nav>
+      <div class="right">
+        <a href="#about-section" data-en="About" data-fr="À propos">About</a>
+        <a href="#skills-section" data-en="Skills" data-fr="Compétences"
+          >Skills</a
+        >
+        <a href="#projects-section" data-en="Projects" data-fr="Projets"
+          >Projects</a
+        >
+        <a href="#experience-section" data-en="Experience" data-fr="Expérience"
+          >Experience</a
+        >
+        <a href="#education-section" data-en="Education" data-fr="Formation"
+          >Education</a
+        >
+        <a href="#contact-section" data-en="Contact" data-fr="Contact"
+          >Contact</a
+        >
 
-  <!-- ABOUT -->
-  <section id="about-section" class="fade-section">
-    <h2>Hey World, I’m Brahim!</h2>
+        <a
+          class="cv-link"
+          href="brahimcv_data.pdf"
+          download
+          title="Download my CV"
+        >
+          <i class="fa-solid fa-file-lines"></i>
+          <span data-en="CV" data-fr="CV">CV</span>
+        </a>
 
-    <div class="headshot">
-      <img src="images/profile.jpg" alt="Brahim Thiam" />
-    </div>
+        <!-- Buttons side by side (theme + language) -->
+        <button id="themeToggle" class="nav-btn" aria-label="Toggle theme">
+          🌙
+        </button>
 
-    <div class="bio">
-      <p>
-        Hey! I’m Brahim, a Computer Science student with a growing passion for data science,
-        machine learning, and building useful software. I love learning by creating, whether
-        it’s a small tool, a clean interface, or a data-driven project.
+        <button
+          id="langToggle"
+          class="nav-btn lang-btn"
+          aria-label="Toggle language"
+        >
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          <span class="lang-code">FR</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ABOUT -->
+    <section id="about-section" class="fade-section">
+      <h2 data-en="Hey World, I’m Brahim!" data-fr="Salut, moi c’est Brahim !">
+        Hey World, I’m Brahim!
+      </h2>
+
+      <div class="headshot placeholder">
+        <span>BT</span>
+      </div>
+
+      <div class="bio">
+        <p
+          data-en="Hey! I’m Brahim, a Computer Science student with a growing passion for data science, machine learning, and building useful software. I love learning by creating, whether it’s a small tool, a clean interface, or a data-driven project."
+          data-fr="Salut ! Je suis Brahim, étudiant en informatique avec une passion grandissante pour la science des données, le machine learning et la création de logiciels utiles. J’aime apprendre en construisant : un petit outil, une interface propre ou un projet basé sur les données."
+        >
+          Hey! I’m Brahim, a Computer Science student with a growing passion for
+          data science, machine learning, and building useful software. I love
+          learning by creating, whether it’s a small tool, a clean interface, or
+          a data-driven project.
+        </p>
+
+        <p
+          data-en="Outside of tech, I enjoy reading, playing soccer, watching anime, lifting weights, and always finding new ways to grow and stay active."
+          data-fr="En dehors de la tech, j’aime lire, jouer au soccer, regarder des animes, faire de la musculation et toujours trouver de nouvelles façons de progresser et rester actif."
+        >
+          Outside of tech, I enjoy reading, playing soccer, watching anime,
+          lifting weights, and always finding new ways to grow and stay active.
+        </p>
+      </div>
+
+      <div class="social-icons">
+        <a href="mailto:brahimlanding@gmail.com"
+          ><i class="fa-solid fa-envelope"></i
+        ></a>
+        <a href="https://github.com/BraBra6" target="_blank"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/brahim-landing-thiam-09a1512ba/"
+          target="_blank"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills-section" class="fade-section">
+      <h2 data-en="Skills" data-fr="Compétences">Skills</h2>
+
+      <div class="skills-container">
+        <i class="devicon-python-plain" title="Python"></i>
+        <i class="devicon-pandas-plain" title="Pandas"></i>
+        <i class="devicon-numpy-plain" title="NumPy"></i>
+        <i class="devicon-scikitlearn-plain" title="Scikit-learn"></i>
+        <i class="fa-solid fa-database" title="SQL"></i>
+        <i class="fa-solid fa-chart-column" title="Power BI"></i>
+        <i class="fa-solid fa-book" title="Jupyter Notebook"></i>
+        <i class="fa-solid fa-flask" title="Anaconda"></i>
+        <i class="fa-brands fa-git-alt" title="Git"></i>
+        <i class="fa-brands fa-github" title="GitHub"></i>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects-section" class="fade-section">
+      <h2 data-en="Projects" data-fr="Projets">Projects</h2>
+
+      <div class="projects-container">
+        <article class="project-card">
+          <h3
+            data-en="Wine Data Analysis & Classification"
+            data-fr="Analyse et classification de données (Wine)"
+          >
+            Wine Data Analysis & Classification
+          </h3>
+          <p><em>Python · Scikit-learn · Matplotlib</em></p>
+          <ul>
+            <li
+              data-en="Performed EDA with PCA and correlation matrices; handled missing values with imputation."
+              data-fr="Analyse exploratoire (EDA) avec PCA et matrices de corrélation ; gestion des valeurs manquantes par imputation."
+            >
+              Performed EDA with PCA and correlation matrices; handled missing
+              values with imputation.
+            </li>
+            <li
+              data-en="Built KNN & Logistic Regression models (up to 95% accuracy) with cross-validation."
+              data-fr="Création de modèles KNN et régression logistique (jusqu’à 95% de précision) avec validation croisée."
+            >
+              Built KNN & Logistic Regression models (up to 95% accuracy) with
+              cross-validation.
+            </li>
+            <li
+              data-en="Compared PCA vs. LDA and documented model performance."
+              data-fr="Comparaison PCA vs LDA et documentation des performances."
+            >
+              Compared PCA vs. LDA and documented model performance.
+            </li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3
+            data-en="AI Anime Recommendation System"
+            data-fr="Système de recommandation d’animes (IA)"
+          >
+            AI Anime Recommendation System
+          </h3>
+          <p><em>Python · Pandas · Scikit-learn · Hugging Face</em></p>
+          <ul>
+            <li
+              data-en="Developed a Netflix-style recommender using collaborative filtering and NLP embeddings."
+              data-fr="Développement d’un recommender style Netflix avec filtrage collaboratif et embeddings NLP."
+            >
+              Developed a Netflix-style recommender using collaborative
+              filtering and NLP embeddings.
+            </li>
+            <li
+              data-en="Processed MyAnimeList data (10k+ entries); used cosine similarity for recommendations."
+              data-fr="Traitement des données MyAnimeList (10k+ entrées) ; utilisation de la similarité cosinus pour recommander."
+            >
+              Processed MyAnimeList data (10k+ entries); used cosine similarity
+              for recommendations.
+            </li>
+            <li
+              data-en="Created an interactive UI with Gradio."
+              data-fr="Création d’une interface interactive avec Gradio."
+            >
+              Created an interactive UI with Gradio.
+            </li>
+          </ul>
+        </article>
+
+        <a
+          href="https://github.com/BraBra6/PC4U"
+          target="_blank"
+          class="project-link"
+        >
+          <article class="project-card">
+            <h3
+              data-en="PC Order Management App"
+              data-fr="Application de gestion de commandes PC"
+            >
+              PC Order Management App
+            </h3>
+            <p><em>Android · Java · Firebase</em></p>
+            <ul>
+              <li
+                data-en="Developed a PC order management application using Firebase Authentication and Realtime Database."
+                data-fr="Développement d’une application de gestion de commandes PC avec Firebase Authentication et Realtime Database."
+              >
+                Developed a PC order management application using Firebase
+                Authentication and Realtime Database.
+              </li>
+              <li
+                data-en="Implemented role-based access control (Administrator, StoreKeeper, Assembler, Requester) with dynamic activity redirection."
+                data-fr="Mise en place d’un contrôle d’accès par rôles (Administrateur, StoreKeeper, Assembler, Requester) avec redirection dynamique des écrans."
+              >
+                Implemented role-based access control (Administrator,
+                StoreKeeper, Assembler, Requester) with dynamic activity
+                redirection.
+              </li>
+              <li
+                data-en="Integrated real-time data synchronization using Firebase listeners for live order and stock updates."
+                data-fr="Synchronisation temps réel via des listeners Firebase pour les mises à jour des commandes et du stock."
+              >
+                Integrated real-time data synchronization using Firebase
+                listeners for live order and stock updates.
+              </li>
+            </ul>
+          </article>
+        </a>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience-section" class="fade-section">
+      <h2 data-en="Experience" data-fr="Expérience">Experience</h2>
+
+      <div class="projects-container">
+        <article class="project-card">
+          <h3
+            data-en="Attendant & Coordinator"
+            data-fr="Préposé & Coordonnateur"
+          >
+            Attendant & Coordinator
+          </h3>
+          <p
+            data-en="City of Gatineau – Sports Center · Aug. 2025 – Present"
+            data-fr="Ville de Gatineau – Centre sportif · Août 2025 – Présent"
+          >
+            <em>City of Gatineau – Sports Center · Aug. 2025 – Present</em>
+          </p>
+          <ul>
+            <li
+              data-en="Coordinate facility setup, logistics, and scheduling for community and sporting events."
+              data-fr="Coordination de la mise en place, de la logistique et de l’horaire pour des événements communautaires et sportifs."
+            >
+              Coordinate facility setup, logistics, and scheduling for community
+              and sporting events.
+            </li>
+            <li
+              data-en="Ensure compliance with safety standards and operational procedures."
+              data-fr="Assurer le respect des normes de sécurité et des procédures opérationnelles."
+            >
+              Ensure compliance with safety standards and operational
+              procedures.
+            </li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3
+            data-en="Substitute Teacher (Primary & Secondary Levels)"
+            data-fr="Enseignant suppléant (primaire et secondaire)"
+          >
+            Substitute Teacher (Primary & Secondary Levels)
+          </h3>
+          <p
+            data-en="City of Gatineau – Schools · Jan. 2021 – Jun. 2024"
+            data-fr="Ville de Gatineau – Écoles · Jan. 2021 – Juin 2024"
+          >
+            <em>City of Gatineau – Schools · Jan. 2021 – Jun. 2024</em>
+          </p>
+          <ul>
+            <li
+              data-en="Delivered lessons across multiple subjects while maintaining classroom continuity."
+              data-fr="Animation de cours sur plusieurs matières tout en assurant la continuité en classe."
+            >
+              Delivered lessons across multiple subjects while maintaining
+              classroom continuity.
+            </li>
+            <li
+              data-en="Demonstrated leadership, adaptability, and decision-making under minimal supervision."
+              data-fr="Démonstration de leadership, d’adaptabilité et de prise de décision avec supervision minimale."
+            >
+              Demonstrated leadership, adaptability, and decision-making under
+              minimal supervision.
+            </li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3 data-en="Assistant Supervisor" data-fr="Assistant superviseur">
+            Assistant Supervisor
+          </h3>
+          <p
+            data-en="City of Gatineau – Day Camp Program · Jun. 2022 – Aug. 2023"
+            data-fr="Ville de Gatineau – Camp de jour · Juin 2022 – Août 2023"
+          >
+            <em>City of Gatineau – Day Camp Program · Jun. 2022 – Aug. 2023</em>
+          </p>
+          <ul>
+            <li
+              data-en="Supported daily operations and supervised staff and participants."
+              data-fr="Soutien aux opérations quotidiennes et supervision du personnel et des participants."
+            >
+              Supported daily operations and supervised staff and participants.
+            </li>
+            <li
+              data-en="Ensured safety compliance and communicated with parents and supervisors."
+              data-fr="Assurer la sécurité et communiquer avec les parents et les superviseurs."
+            >
+              Ensured safety compliance and communicated with parents and
+              supervisors.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education-section" class="fade-section">
+      <h2 data-en="Education" data-fr="Formation">Education</h2>
+      <h3
+        data-en="B.Sc. in Computer Science"
+        data-fr="Baccalauréat en informatique"
+      >
+        B.Sc. in Computer Science
+      </h3>
+      <p
+        data-en="Université du Québec en Outaouais, Gatineau, QC"
+        data-fr="Université du Québec en Outaouais, Gatineau, QC"
+      >
+        Universite du Quebec en Outaouais, Gatineau, QC
       </p>
+      <ul>
+        <li
+          data-en="Specialization: Data Science and Artificial Intelligence"
+          data-fr="Spécialisation : science des données et intelligence artificielle"
+        >
+          Specialization: Data Science, Machine Learning, Artificial
+          Intelligence
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact-section" class="fade-section">
+      <h2 data-en="Contact" data-fr="Contact">Contact</h2>
+
+      <ul class="contact-list">
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:brahimlanding@gmail.com">brahimlanding@gmail.com</a>
+        </li>
+        <li>
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/BraBra6" target="_blank"
+            >github.com/BraBra6</a
+          >
+        </li>
+        <li>
+          <i class="fa-brands fa-linkedin"></i>
+          <a
+            href="https://www.linkedin.com/in/brahim-landing-thiam-09a1512ba/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <footer>
       <p>
-        Outside of tech, I enjoy reading, playing soccer, watching anime, lifting weights, and
-        always finding new ways to grow and stay active.
+        © <span id="year"></span>
+        <span
+          data-en="Brahim Thiam | All Rights Reserved"
+          data-fr="Brahim Thiam | Tous droits réservés"
+          >Brahim Thiam | All Rights Reserved</span
+        >
       </p>
-    </div>
+    </footer>
 
-    <!-- Social icons row -->
-    <div class="social-icons">
-      <a href="mailto:brahimlanding@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://github.com/BraBra6" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/brahim-landing-thiam-09a1512ba/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-  </section>
+    <!-- SCRIPTS -->
+    <script>
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-  <!-- SKILLS -->
-  <section id="skills-section" class="fade-section">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <i class="devicon-python-plain" title="Python"></i>
-      <i class="devicon-pandas-plain" title="Pandas"></i>
-      <i class="devicon-numpy-plain" title="NumPy"></i>
-      <i class="devicon-scikitlearn-plain" title="Scikit-learn"></i>
-      <i class="fa-solid fa-database" title="SQL"></i>
-      <i class="fa-solid fa-chart-column" title="Power BI"></i>
-      <i class="fa-solid fa-book" title="Jupyter Notebook"></i>
-      <i class="fa-solid fa-flask" title="Anaconda"></i>
-      <i class="fa-brands fa-git-alt" title="Git"></i>
-      <i class="fa-brands fa-github" title="GitHub"></i>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects-section" class="fade-section">
-    <h2>Projects</h2>
-    <div class="projects-container">
-      <article class="project-card">
-        <h3>Wine Data Analysis & Classification</h3>
-        <p><em>Python · Scikit-learn · Matplotlib</em></p>
-        <ul>
-          <li>Performed EDA with PCA and correlation matrices; handled missing values with imputation.</li>
-          <li>Built KNN & Logistic Regression models (up to 95% accuracy) with cross-validation.</li>
-          <li>Compared PCA vs. LDA and documented model performance.</li>
-        </ul>
-      </article>
-
-      <article class="project-card">
-        <h3>AI Anime Recommendation System</h3>
-        <p><em>Python · Pandas · Scikit-learn · Hugging Face</em></p>
-        <ul>
-          <li>Developed a Netflix-style recommender using collaborative filtering and NLP embeddings.</li>
-          <li>Processed MyAnimeList data (10k+ entries); used cosine similarity for recommendations.</li>
-          <li>Created an interactive UI with Gradio.</li>
-        </ul>
-      </article>
-
-      <article class="project-card">
-        <h3>PC Order Management App</h3>
-        <p><em>Android · Java · Firebase</em></p>
-        <ul>
-          <li>Developed a PC order management app with Firebase Authentication and real-time CRUD.</li>
-          <li>Implemented role-based access and optimized database queries for performance.</li>
-          <li>Added push notifications for live updates.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education-section" class="fade-section">
-    <h2>Education</h2>
-    <h3>B.Sc. in Computer Science</h3>
-    <p>Universite du Quebec en Outaouais, Gatineau, QC</p>
-    <ul>
-      <li>Specialization: Data Science, Machine Learning, Artificial Intelligence</li>
-    </ul>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact-section" class="fade-section">
-    <h2>Contact</h2>
-    <ul class="contact-list">
-      <li><i class="fa-solid fa-envelope"></i> <a href="mailto:brahimlanding@gmail.com">brahimlanding@gmail.com</a></li>
-      <li><i class="fa-brands fa-github"></i> <a href="https://github.com/BraBra6" target="_blank">github.com/BraBra6</a></li>
-      <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/brahim-landing-thiam-09a1512ba/" target="_blank">LinkedIn</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© <span id="year"></span> Brahim Thiam | All Rights Reserved</p>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const toggle = document.getElementById("themeToggle");
-    toggle.addEventListener("click", () => {
-      document.documentElement.classList.toggle("theme-light");
-      toggle.textContent = document.documentElement.classList.contains("theme-light") ? "🌞" : "🌙";
-    });
-
-    // Fade-in animation
-    const sections = document.querySelectorAll(".fade-section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
+      // Theme toggle
+      const themeToggle = document.getElementById("themeToggle");
+      themeToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("theme-light");
+        themeToggle.textContent = document.documentElement.classList.contains(
+          "theme-light",
+        )
+          ? "🌞"
+          : "🌙";
       });
-    }, { threshold: 0.2 });
-    sections.forEach(sec => observer.observe(sec));
-  </script>
-</body>
+
+      // Fade-in animation
+      const sections = document.querySelectorAll(".fade-section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.2 },
+      );
+      sections.forEach((sec) => observer.observe(sec));
+
+      // Language toggle (EN/FR) + keep same size + disable custom font in FR via body.lang-fr
+      const langToggle = document.getElementById("langToggle");
+      const langCode = langToggle.querySelector(".lang-code");
+
+      let currentLang = "en";
+
+      function applyLanguage(lang) {
+        document.querySelectorAll("[data-en]").forEach((el) => {
+          el.textContent = el.getAttribute(`data-${lang}`);
+        });
+
+        document.documentElement.lang = lang;
+
+        // CSS should define: body.lang-fr nav a { font-family: system-ui,... } to keep accents
+        document.body.classList.toggle("lang-fr", lang === "fr");
+
+        // Button shows NEXT language
+        langCode.textContent = lang === "en" ? "FR" : "EN";
+      }
+
+      langToggle.addEventListener("click", () => {
+        currentLang = currentLang === "en" ? "fr" : "en";
+        applyLanguage(currentLang);
+      });
+
+      // Initialize
+      applyLanguage(currentLang);
+    </script>
+  </body>
 </html>

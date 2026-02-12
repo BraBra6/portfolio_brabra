@@ -1,13 +1,13 @@
 /* ===== CUSTOM FONT (Brahim's personal font) ===== */
 @font-face {
-  font-family: 'Brahim';
-  src: url('fonts/font.ttf') format('truetype');
+  font-family: "Brahim";
+  src: url("fonts/font.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Brahim';
-  src: url('fonts/bold_font.ttf') format('truetype');
+  font-family: "Brahim";
+  src: url("fonts/bold_font.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
 }
@@ -34,22 +34,25 @@
 }
 
 /* ===== RESET ===== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  font-size: 150%;
+}
 
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Brahim', 'Inter', 'Poppins', sans-serif;
+  font-family: "Brahim", "Inter", "Poppins", sans-serif;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-html {
-  font-size: 150%;
-}
-
-
 
 /* ===== NAV ===== */
 nav {
@@ -66,12 +69,21 @@ nav {
   border-bottom: 1px solid var(--border);
   z-index: 1000;
 }
+
 nav .left a {
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--accent);
   text-decoration: none;
 }
+
+/* keep items aligned + allow buttons to behave like links */
+nav .right {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem; /* spacing between items */
+}
+
 nav .right a {
   color: var(--ink);
   margin: 0 0.8rem;
@@ -81,8 +93,12 @@ nav .right a {
   opacity: 0.8;
   transition: 0.3s;
 }
-nav .right a:hover { color: var(--accent); opacity: 1; }
+nav .right a:hover {
+  color: var(--accent);
+  opacity: 1;
+}
 
+/* CV link */
 .cv-link {
   display: inline-flex;
   align-items: center;
@@ -100,46 +116,98 @@ nav .right a:hover { color: var(--accent); opacity: 1; }
   border-color: var(--accent);
 }
 
-/* --- Theme toggle (transparent / sans fond blanc) --- */
-#themeToggle {
+/* ===== NAV BUTTONS (Theme + Language) =====
+   Make them look consistent + hover turns yellow-ish */
+.nav-btn {
   width: 38px;
   height: 38px;
-  border-radius: 50%;
-  background: transparent;              /* << enlève le fond blanc */
+  border-radius: 12px; /* similar to your other UI elements */
+  background: transparent;
   border: 1px solid var(--border);
-  color: var(--accent);
+  color: var(--ink);
   cursor: pointer;
-  font-size: 1.1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all .25s ease;
+  transition: all 0.25s ease;
+  padding: 0;
 }
-#themeToggle:hover {
+
+.nav-btn:hover {
   background: var(--chip);
   border-color: var(--accent);
-  color: var(--ink);
+  color: var(--accent);
   transform: translateY(-2px);
 }
-#themeToggle:focus { outline: none; box-shadow: 0 0 6px rgba(224,181,78,.3); }
 
+.nav-btn:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(224, 181, 78, 0.3);
+}
 
+/* Theme icon size */
+#themeToggle {
+  font-size: 1.1rem;
+}
+
+/* Language button: icon + text, same size EN/FR */
+.lang-btn {
+  width: auto; /* let it fit icon + EN/FR */
+  padding: 0 0.65rem;
+  gap: 0.4rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  font-size: 0.95rem; /* same size always */
+  line-height: 1;
+}
+
+.lang-btn i {
+  font-size: 1rem;
+  line-height: 1;
+}
+.lang-btn .lang-code {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* ===== Disable custom font in French (keep size similar) =====
+   Your special font has missing accents, so in French we switch font-family only. */
+body.lang-fr {
+  font-family:
+    "Inter",
+    "Poppins",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+/* optional: keep headings still bold in FR */
+body.lang-fr h2,
+body.lang-fr h3,
+body.lang-fr nav .right a,
+body.lang-fr nav .left a {
+  font-weight: 700;
+}
 
 /* ===== SECTIONS ===== */
 section {
-  padding: 7rem 1.25rem;                 /* un peu moins haut + marges latérales réduites */
+  padding: 7rem 1.25rem;
   min-height: 74vh;
   background: var(--paper);
   text-align: center;
   border-bottom: 1px solid var(--border);
 }
+
 section h2 {
   font-size: 2.6rem;
   margin-bottom: 0.75rem;
   color: var(--accent);
   font-weight: 700;
-  letter-spacing: .5px;
-  text-shadow: 0 2px 10px rgba(224,181,78,.08);
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(224, 181, 78, 0.08);
 }
 section h2::after {
   content: "";
@@ -147,12 +215,14 @@ section h2::after {
   width: 110px;
   height: 4px;
   background: var(--accent);
-  margin: .45rem auto 0;
+  margin: 0.45rem auto 0;
   border-radius: 2px;
 }
 
 /* ===== ABOUT ===== */
-#about-section { background: var(--bg); }
+#about-section {
+  background: var(--bg);
+}
 
 .headshot {
   width: 210px;
@@ -160,7 +230,7 @@ section h2::after {
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--accent);
-  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   margin: 1.3rem auto 1.6rem;
   display: flex;
   align-items: center;
@@ -171,15 +241,15 @@ section h2::after {
   height: 100%;
   object-fit: cover;
 }
+
 .bio {
-  max-width: 720px;                      /* largeur de lecture + étroite */
+  max-width: 720px;
   margin: 0 auto;
   font-size: 1.06rem;
   color: var(--muted);
   line-height: 1.85;
 }
 
-/* petits icônes sous la bio (si utilisés) */
 .social-icons {
   display: flex;
   gap: 12px;
@@ -187,14 +257,17 @@ section h2::after {
   margin-top: 1.1rem;
 }
 .social-icons a {
-  width: 42px; height: 42px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--chip);
   border: 1px solid var(--border);
   color: var(--ink);
   font-size: 1.15rem;
-  transition: .25s ease;
+  transition: 0.25s ease;
 }
 .social-icons a:hover {
   transform: translateY(-3px);
@@ -209,17 +282,17 @@ section h2::after {
   gap: 1.1rem;
   justify-content: center;
   margin-top: 1.5rem;
-  max-width: 860px;                       /* rangée moins large */
+  max-width: 860px;
   margin-left: auto;
   margin-right: auto;
 }
 .skills-container i {
   font-size: 2.6rem;
   background: var(--chip);
-  padding: .8rem;
+  padding: 0.8rem;
   border-radius: 14px;
   border: 1px solid var(--border);
-  transition: .25s ease;
+  transition: 0.25s ease;
 }
 .skills-container i:hover {
   transform: translateY(-5px);
@@ -231,46 +304,62 @@ section h2::after {
 .projects-container {
   display: grid;
   gap: 16px;
-  grid-template-columns: 1fr;             /* une colonne par défaut */
-  max-width: 860px;                       /* plus étroit que 980 */
+  grid-template-columns: 1fr;
+  max-width: 860px;
   margin: 1.5rem auto 0;
 }
 @media (min-width: 820px) {
-  .projects-container { grid-template-columns: 1fr 1fr; } /* 2 colonnes sur desktop */
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
 .project-card {
   background: var(--paper);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 18px;
   text-align: left;
-  transition: .25s ease;
+  transition: 0.25s ease;
 }
 .project-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
-  box-shadow: 0 10px 18px rgba(0,0,0,.2);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
 }
 .project-card h3 {
-  margin-bottom: .35rem;
+  margin-bottom: 0.35rem;
   color: var(--accent);
   font-weight: 700;
 }
-.project-card p { color: var(--muted); }
+.project-card p {
+  color: var(--muted);
+}
 .project-card ul {
-  margin-top: .45rem;
+  margin-top: 0.45rem;
   padding-left: 1.15rem;
   list-style-type: disc;
   color: var(--muted);
 }
 
+/* Make the whole project clickable without blue underline */
+.project-link {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.project-link:hover {
+  text-decoration: none !important;
+}
+
 /* ===== EDUCATION ===== */
 #education-section ul {
-  list-style: none;       /* supprime le point parasite */
+  list-style: none;
   padding: 0;
-  margin-top: .9rem;
+  margin-top: 0.9rem;
 }
-#education-section li { margin: .3rem 0; }
+#education-section li {
+  margin: 0.3rem 0;
+}
 
 /* ===== CONTACT ===== */
 .contact-list {
@@ -287,12 +376,16 @@ section h2::after {
   justify-content: center;
   font-size: 1.05rem;
 }
-.contact-list i { color: var(--accent); }
+.contact-list i {
+  color: var(--accent);
+}
 .contact-list a {
   color: var(--accent);
   text-decoration: none;
 }
-.contact-list a:hover { color: var(--ink); }
+.contact-list a:hover {
+  color: var(--ink);
+}
 
 /* ===== FOOTER ===== */
 footer {
@@ -300,14 +393,16 @@ footer {
   color: var(--muted);
   text-align: center;
   padding: 1.5rem 0;
-  font-size: .92rem;
+  font-size: 0.92rem;
 }
 
 /* ===== FADE-IN ANIMATION ===== */
 .fade-section {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity .9s ease, transform .9s ease;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
 }
 .fade-section.visible {
   opacity: 1;
@@ -316,11 +411,74 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 720px) {
-  nav { padding: 0 1.25rem; }
-  nav .right a { margin: 0 .5rem; }
-  section { padding: 6.2rem 1rem; }
-  section h2 { font-size: 2.2rem; }
-  .headshot { width: 190px; height: 190px; }
-  .skills-container i { font-size: 2.3rem; padding: .7rem; }
+  nav {
+    padding: 0 1.25rem;
+  }
+  nav .right a {
+    margin: 0 0.5rem;
+  }
+  section {
+    padding: 6.2rem 1rem;
+  }
+  section h2 {
+    font-size: 2.2rem;
+  }
+  .headshot {
+    width: 190px;
+    height: 190px;
+  }
+  .skills-container i {
+    font-size: 2.3rem;
+    padding: 0.7rem;
+  }
+
+  /* keep buttons aligned on mobile */
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+  }
+  .lang-btn {
+    padding: 0 0.55rem;
+  }
+}
+/* ===== French mode adjustments ===== */
+body.lang-fr {
+  font-family: "Inter", "Poppins", sans-serif;
 }
 
+body.lang-fr p {
+  font-size: 0.82rem; /* smaller text */
+  line-height: 1.75;
+}
+
+body.lang-fr h2 {
+  font-size: 2.4rem; /* slightly smaller heading */
+}
+/* ===== Navbar adjustment in French ===== */
+body.lang-fr nav .right a {
+  font-size: 0.75rem; /* smaller */
+  font-weight: 500; /* lighter */
+  letter-spacing: 0.3px;
+}
+/* ===== Professional Placeholder Headshot ===== */
+
+.headshot.placeholder {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #101318, #1a1f26);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.headshot.placeholder span {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 2px;
+  font-family: "Inter", sans-serif;
+}
